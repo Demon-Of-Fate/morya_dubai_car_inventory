@@ -418,6 +418,9 @@
             </div>
         </div>
     </div>
+    <div class="container d-flex">
+      <button class="mx-auto bg-warning" style="padding: 1rem 30%;margin-bottom:2rem;border-radius:50px;border:none"><a class="text-dark" href="{{ route('collection') }}">View Collections</a></button>
+    </div>
 </div>
 <div style="background-image:url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" class="text-center py-5">
     <div class="d-flex justify-content-center align-items-center flex-column">
