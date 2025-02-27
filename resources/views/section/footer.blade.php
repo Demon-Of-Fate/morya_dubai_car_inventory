@@ -45,3 +45,66 @@
         </div>
     </div>
 </footer>
+
+<script>
+    $(document).ready(function() {
+      let currentSlide = 0;
+      const slides = $('.slide');
+      const dots = $('.slider-dot');
+      const totalSlides = slides.length;
+      
+      // Auto slide function
+      function autoSlide() {
+        showSlide((currentSlide + 1) % totalSlides);
+      }
+      
+      // Set interval for auto sliding
+      let slideInterval = setInterval(autoSlide, 5000);
+      
+      // Show slide function
+      function showSlide(index) {
+        // Reset interval when manually changing slides
+        clearInterval(slideInterval);
+        slideInterval = setInterval(autoSlide, 5000);
+        
+        // Update current slide
+        currentSlide = index;
+        
+        // Remove active class from all slides and dots
+        slides.removeClass('active');
+        dots.removeClass('active');
+        
+        // Add active class to current slide and dot
+        $(slides[index]).addClass('active');
+        $(dots[index]).addClass('active');
+      }
+      
+      // Click handlers for dots
+      dots.click(function() {
+        const index = $(this).data('index');
+        showSlide(index);
+      });
+      
+      // Click handlers for arrows
+      $('.slider-prev').click(function() {
+        let prevSlide = currentSlide - 1;
+        if (prevSlide < 0) prevSlide = totalSlides - 1;
+        showSlide(prevSlide);
+      });
+      
+      $('.slider-next').click(function() {
+        let nextSlide = (currentSlide + 1) % totalSlides;
+        showSlide(nextSlide);
+      });
+      
+      // Pause auto slide on hover
+      $('.slider-container').hover(
+        function() {
+          clearInterval(slideInterval);
+        },
+        function() {
+          slideInterval = setInterval(autoSlide, 5000);
+        }
+      );
+    });
+  </script>

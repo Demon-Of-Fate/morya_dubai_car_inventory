@@ -2,6 +2,17 @@
 
 @section('styleCode')
 <style>
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+     body {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: #333;
+       
+     }
+     
     /* Home page slider part start  */
 
     .slider-section{
@@ -53,45 +64,7 @@
         height: 330px;
     }
 
-
-    /* Home page hero end */
-</style>
-
-{{-- @section('content')
-<div class="bg-info slider-section">
-<div class="slide" style="background-image: url('')">
-    <div class="slide-content">
-        <h1>Design With Technology</h1>
-        <p>for your Success in Business</p>
-    </div>
-
-</div>
-</div>
-
-@endsection --}}
-
-@section('content')
- <!-- Start Hero Section -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Limousine Service Slider</title>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <style>
-     * {
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-     }
-     
-     body {
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       color: #333;
-     }
-     
-     .slider-container {
+    .slider-container {
        position: relative;
        width: 100%;
        height: 80vh;
@@ -254,9 +227,25 @@
          height: 40px;
        }
      }
-   </style>
- </head>
- <body>
+
+    /* Home page hero end */
+</style>
+
+{{-- @section('content')
+<div class="bg-info slider-section">
+<div class="slide" style="background-image: url('')">
+    <div class="slide-content">
+        <h1>Design With Technology</h1>
+        <p>for your Success in Business</p>
+    </div>
+
+</div>
+</div>
+
+@endsection --}}
+
+@section('content')
+ <!-- Start Hero Section -->
    <div class="slider-container">
      <div class="slider">
        <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');">
@@ -298,72 +287,10 @@
      </div>
    </div>
  
-   <script>
-     $(document).ready(function() {
-       let currentSlide = 0;
-       const slides = $('.slide');
-       const dots = $('.slider-dot');
-       const totalSlides = slides.length;
-       
-       // Auto slide function
-       function autoSlide() {
-         showSlide((currentSlide + 1) % totalSlides);
-       }
-       
-       // Set interval for auto sliding
-       let slideInterval = setInterval(autoSlide, 5000);
-       
-       // Show slide function
-       function showSlide(index) {
-         // Reset interval when manually changing slides
-         clearInterval(slideInterval);
-         slideInterval = setInterval(autoSlide, 5000);
-         
-         // Update current slide
-         currentSlide = index;
-         
-         // Remove active class from all slides and dots
-         slides.removeClass('active');
-         dots.removeClass('active');
-         
-         // Add active class to current slide and dot
-         $(slides[index]).addClass('active');
-         $(dots[index]).addClass('active');
-       }
-       
-       // Click handlers for dots
-       dots.click(function() {
-         const index = $(this).data('index');
-         showSlide(index);
-       });
-       
-       // Click handlers for arrows
-       $('.slider-prev').click(function() {
-         let prevSlide = currentSlide - 1;
-         if (prevSlide < 0) prevSlide = totalSlides - 1;
-         showSlide(prevSlide);
-       });
-       
-       $('.slider-next').click(function() {
-         let nextSlide = (currentSlide + 1) % totalSlides;
-         showSlide(nextSlide);
-       });
-       
-       // Pause auto slide on hover
-       $('.slider-container').hover(
-         function() {
-           clearInterval(slideInterval);
-         },
-         function() {
-           slideInterval = setInterval(autoSlide, 5000);
-         }
-       );
-     });
-   </script>
- </body>
- </html>
- 
+
   <!-- End Hero Section -->
+
+
 <div class="homeservice p-5 bg-dark text-light row" style="width: 100vw;">
     <div class="col-lg-4 d-flex mt-3">
         <div class="imageservice1"><img src="http://limme.like-themes.com/wp-content/uploads/2019/06/serv_01-100x100.jpg" alt="service"></div>
