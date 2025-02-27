@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +26,11 @@ Route::get('/contact',function(){
 Route::get('/test',function(){
     return view('layout.user_layout');
 });
+
+Route::get('/collection', [HomeController::class, 'Collection'])->name('collection');
+
+Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name('testimonial');
+
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+
+Route::get('/faq', [FaqController::class, 'faq'])->name('faq');

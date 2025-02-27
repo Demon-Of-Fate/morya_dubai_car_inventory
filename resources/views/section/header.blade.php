@@ -33,10 +33,12 @@
         .navbarlist {
             text-transform: uppercase;
             font-size: .8rem;
+            z-index: 999;
             width: 50%;
         }
 
         .navbarlist>a:hover {
+            
             color: #FFC107;
         }
 
@@ -143,10 +145,10 @@
 <nav class="bg-dark " style="z-index: 5;">
     <div id="bignav" class="text-light px-4">
         <div>
-            <img src="http://limme.like-themes.com/wp-content/uploads/2019/06/logo_1x_white.png" alt="company-icon">
+            <img src="{{asset('img/logo.png')}}" alt="company-icon" class="img-fluid">
         </div>
         <div class="d-flex justify-content-between align-items-center px-3" style="width: 100%;">
-            <ol class="d-flex justify-content-evenly pl-2 mt-3 navbarlist">
+            <ol class="d-flex justify-content-evenly pl-2 mt-3 navbarlist z-index">
                 <a href="#" id="homedropdown">Home <span class="text-warning">></span></a>
                 <div id="homenavbar">
                     <div id="navbar1">
@@ -159,10 +161,10 @@
                 <a href="#" id="aboutdropdown">About us <span class="text-warning">></span></a>
                 <div id="aboutnavbar">
                     <div id="navbar1">
-                        <a href="#">Testimonial</a>
-                        <a href="#">Faq</a>
-                        <a href="#">Gallery</a>
-                        <a href="#">404</a>
+                        <a href="{{route ('testimonial')}}">Testimonial</a>
+                        <a href="{{route ('faq')}}">Faq</a>
+                        {{-- <a href="#">Gallery</a> --}}
+                        <a href="{{route ('about')}}">About</a>
                     </div>
                 </div>
                 <a href="#" id="productdropdown">products <span class="text-warning">></span></a>
@@ -197,7 +199,7 @@
     <div id="smallnavbar">
         <div id="smallnav" class="bg-dark text-light px-4">
             <div id="smallnavimage">
-                <img src="http://limme.like-themes.com/wp-content/uploads/2019/06/logo_1x_white.png" alt="company-icon">
+                <img src="{{asset('./img/logo.png')}}" class="img-fluid"style="height:80px" alt="company-icon">
             </div>
             <div id="smalldropdown">
                 <i class="fa-solid fa-bars"></i>

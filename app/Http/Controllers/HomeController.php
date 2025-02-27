@@ -10,7 +10,11 @@ class HomeController extends Controller
     public function Home(){
         $data = DB::table('car_images')->get();
         // return $data;
-        return view('home');
+        return view('home'); 
+    }
+
+    public function Collection(){
+        return view('pages.collection');
     }
 
     // public function faq
