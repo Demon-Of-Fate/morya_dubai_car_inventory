@@ -108,7 +108,7 @@
                         </p>
                         <p>⭐⭐⭐⭐</p>
                     </div>
-                    <button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button>
+                    <a href="{{ route('carDetail',$c->id) }}"><button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button></a>
                 </div>
             </div>
         </div>
@@ -126,7 +126,6 @@
     </div>
 
 </div>
-@include('./layout/filter-modal')
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -138,6 +137,7 @@
             <form method="post" action="{{url('/search/byfilter')}}" class="bbtmodal-form">
                 @csrf
                 <div class="modal-body">
+                    <button class="btn btn-secondary resetfltrbtn">Reset Filter</button>
                     <fieldset>
                         <label>KMS Driven</label>
                         <ul class="checkboxinput-list">
@@ -224,8 +224,18 @@
 
 
 <script>
-    $('#sortbtn').on('change', function(e) {
-        $(this).closest('form').submit();
+    $(document).ready(function() {
+
+        $('#sortbtn').on('change', function(e) {
+            $(this).closest('form').submit();
+        });
+
+        $('.resetfltrbtn').click(function(e) {
+            e.preventDefault(); 
+            var newUrl = '/collection';
+            window.location.href = newUrl;
+        });
+
     });
 </script>
 
