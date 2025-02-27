@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\car_images;
 use App\Models\cars;
+use App\Models\pricings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,7 +32,13 @@ class HomeController extends Controller
         return view('pages.collection',compact('cars','total_cars'));
     }
     public function carDetails ($id){
-        return view('pages.car');
+        // return $id;
+        $cars=cars::find($id);
+        $price=pricings::select('sellingprice')->where('carid',$id)->get();
+        // return $price;
+        $images=car_images::select('images')->where('carid',$id)->get();
+
+        return view('pages.car',compact('cars','price','images'));
     }
 
     public function searchBySort(Request $request)
