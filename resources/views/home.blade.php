@@ -204,6 +204,11 @@
        color: white;
        font-size: 1.5rem;
      }
+     @media( max-width: 1200px){
+        .luxury-car{
+            display: none;
+        }
+     }
      
      @media (max-width: 768px) {
        .slide-title {
@@ -230,22 +235,8 @@
 
     /* Home page hero end */
 </style>
-
-{{-- @section('content')
-<div class="bg-info slider-section">
-<div class="slide" style="background-image: url('')">
-    <div class="slide-content">
-        <h1>Design With Technology</h1>
-        <p>for your Success in Business</p>
-    </div>
-
-</div>
-</div>
-
-@endsection --}}
-
 @section('content')
- <!-- Start Hero Section -->
+ <!-- Start slider Section -->
    <div class="slider-container">
      <div class="slider">
        <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');">
@@ -286,11 +277,10 @@
        </div>
      </div>
    </div>
- 
-
-  <!-- End Hero Section -->
+  <!-- End slider Section -->
 
 
+   <!-- Start Services Section -->
 <div class="homeservice p-5 bg-dark text-light row" style="width: 100vw;">
     <div class="col-lg-4 d-flex mt-3">
         <div class="imageservice1"><img src="http://limme.like-themes.com/wp-content/uploads/2019/06/serv_01-100x100.jpg" alt="service"></div>
@@ -314,23 +304,24 @@
         </div>
     </div>
 </div>
+ <!-- End Services Section -->
 <div class="homehero d-flex flex-wrap align-items-center">
-    <div>
+    <div >
         <p id="homeheroheading"><span style="color: #FFC107;">Luxury Cars</span> for Maximum
             Satisfaction</p>
         <p>Nullam sed ultricies erat, nec euismod metus. Morbi porttitor sapien vitae leo scelerisque. Nullam sed ultricies erat.</p>
         <button class="btn">Read More</button>
     </div>
     <p class="d-flex">
-        <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/about-limmo.png" class="img-fluid" alt="main hero">
+        <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/about-limmo.png" class="img-fluid luxury-car" alt="main hero">
     </p>
 </div>
 <div>
     <div class="row">
-        <div class="col-md-4 p-5">
+        <div class="col-md-6 col-lg-6 col-xl-4 p-5">
             <div class="servicecard" style="border:1px grey dotted;">
                 <div class="d-flex justify-content-center">
-                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-768x510.jpg" alt="car image" style="height: 13rem;">
+                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
                 </div>
                 <div class="px-4">
                     <p style="font-size: 1.7rem;">Cadillac Limousine XTS</p>
@@ -357,10 +348,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 p-5">
+        <div class="col-md-6 col-lg-6 col-xl-4 p-5">
             <div class="servicecard" style="border:1px grey dotted;">
                 <div class="d-flex justify-content-center">
-                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_02-768x510.jpg" alt="car image" style="height: 13rem;">
+                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_02-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
                 </div>
                 <div class="px-4">
                     <p style="font-size: 1.7rem;">Mercedes Benz E-Class</p>
@@ -387,17 +378,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 p-5">
+        <div class="col-md-6 col-lg-6 col-xl-4 p-5">
             <div class="servicecard" style="border:1px grey dotted;">
                 <div class="d-flex justify-content-center">
-                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_03-768x510.jpg" alt="car image" style="height: 13rem;">
+                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_03-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
                 </div>
                 <div class="px-4">
                     <p style="font-size: 1.7rem;">Range Rover Sport 5.5</p>
                     <p>Insured, leather interior, air conditioning, rain sensor, panoramic roof</p>
                     <div class="d-flex justify-content-between align-items-center px-1">
                         <div class="d-flex justify-content-center align-items-center flex-column p-3" style="border: 1px solid #D7B65D;padding:5px;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
+                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping "></i></span>
                             <span>4 Seats</span>
                         </div>
                         <div class="d-flex justify-content-center align-items-center flex-column p-3" style="border: 1px solid #D7B65D;padding:5px;">
@@ -419,7 +410,7 @@
         </div>
     </div>
     <div class="container d-flex">
-      <button class="mx-auto bg-warning" style="padding: 1rem 30%;margin-bottom:2rem;border-radius:50px;border:none"><a class="text-dark" href="{{ route('collection') }}">View Collections</a></button>
+      <button class="mx-auto btn " style="padding: 1rem 30%;margin-bottom:2rem;border-radius:15px;border:none; background-color: #D7B65D;"><a class="text-dark btn" href="{{ route('collection') }}">View Collections</a></button>
     </div>
 </div>
 <div style="background-image:url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" class="text-center py-5">

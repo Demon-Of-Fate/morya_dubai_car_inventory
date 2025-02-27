@@ -29,6 +29,9 @@ class HomeController extends Controller
         
         return view('pages.collection',compact('cars','total_cars'));
     }
+    public function carDetails ($id){
+        return view('pages.car');
+    }
 
     public function searchBySort(Request $request)
     {

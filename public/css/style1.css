@@ -1,0 +1,366 @@
+  * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+     body {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: #333;
+     }
+     /* Navbar Styling Start */
+     #bignav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7rem;
+        border-bottom: .5px dashed;
+    }
+
+    #smallnav {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        border-bottom: 5px dashed;
+    }
+
+    #smallnavbar {
+        display: none;
+    }
+
+    #smallnavimage {
+        width: 100%;
+        text-align: center;
+    }
+
+    #smalldropdown {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Navbarlist section start */
+    .navbarlist {
+        text-transform: uppercase;
+        font-size: .8rem;
+        z-index: 999;
+        width: 50%;
+    }
+
+    .navbarlist>a:hover {
+        
+        color: #FFC107;
+    }
+
+    .navbarlist>a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Navbar list section end */
+
+    /* nav ka dropdown start here */
+    #navbar1 a:hover {
+        background-color: #FFC107;
+    }
+
+    #navbar1 a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        border-radius: .5rem;
+        padding: 1rem;
+    }
+
+    #homenavbar {
+        display: none;
+        position: absolute;
+        top: 4.7rem;
+        left: 12rem;
+        background-color: white;
+        color: black;
+        padding: .5rem;
+        width: 17%;
+    }
+
+    #aboutnavbar {
+        display: none;
+        position: absolute;
+        top: 4.7rem;
+        left: 18rem;
+        background-color: white;
+        color: black;
+        padding: .5rem;
+        width: 17%;
+    }
+
+    #productnavbar {
+        display: none;
+        position: absolute;
+        top: 4.7rem;
+        left: 23rem;
+        background-color: white;
+        color: black;
+        padding: .5rem;
+        width: 17%;
+    }
+
+    #blognavbar {
+        display: none;
+        position: absolute;
+        top: 4.7rem;
+        left: 27rem;
+        background-color: white;
+        color: black;
+        padding: .5rem;
+        width: 17%;
+    }
+
+    /* nav ka dropdown end here */
+    /* medium device k liye  */
+    @media only screen and (max-width:950px) {
+        .navbarbigwhatsaap {
+            font-size: 1.7rem;
+        }
+
+        .navbarbigwhatsaap1 h5 {
+            font-size: .7rem;
+        }
+
+        .navbarbigwhatsaap1 {
+            font-size: .7rem;
+        }
+
+        .navbarlist {
+            font-size: .7rem;
+        }
+
+        .navbarusericon {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media only screen and (max-width:850px) {
+        #bignav {
+            display: none;
+        }
+
+        #smallnavbar {
+            display: block;
+        }
+    }
+    /* Navbar styliing End */
+     
+    /* Home page slider part start  */
+
+    .slider-section{
+        height: 50rem;
+        width: 100%;
+        
+    }
+    /* Home page slider part end */
+
+
+    /* home page service part Start */
+
+    .imageservice1 img {
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .textservice1 p {
+        color: #D7B65D;
+        font-size: 1.3rem;
+    }
+
+    /* Home Page Service Part End */
+
+    /* Home page hero start */
+    .homehero {
+        height: 100vh;
+    }
+
+    .homehero div #homeheroheading {
+        font-size: 2.5rem;
+        width: 70%;
+    }
+
+    .homehero div button {
+        background-color: #D7B65D;
+        border: 1px solid #D7B65D;
+        padding: 10px 40px;
+    }
+
+    .homehero div {
+        width: 30%;
+        padding: 0 30px;
+    }
+
+    .homehero p img {
+        width: 100%;
+        height: 330px;
+    }
+
+    .slider-container {
+       position: relative;
+       width: 100%;
+       height: 80vh;
+       overflow: hidden;
+     }
+     
+     .slider {
+       width: 100%;
+       height: 100%;
+       position: relative;
+     }
+     
+     .slide {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       opacity: 0;
+       transition: opacity 1s ease-in-out;
+       background-size: cover;
+       background-position: center;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+     
+     .slide.active {
+       opacity: 1;
+     }
+     
+     .slide::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: rgba(0, 0, 0, 0.5);
+     }
+     
+     .slide-content {
+       position: relative;
+       z-index: 10;
+       text-align: center;
+       max-width: 800px;
+       padding: 0 20px;
+       color: white;
+     }
+     
+     .slide-title {
+       font-size: 3rem;
+       margin-bottom: 1rem;
+       font-weight: 700;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+     }
+     
+     .slide-subtitle {
+       font-size: 1.5rem;
+       margin-bottom: 2rem;
+       font-weight: 300;
+     }
+     
+     .slide-btn {
+       display: inline-block;
+       padding: 15px 30px;
+       background-color: #f7c427;
+       color: #333;
+       text-decoration: none;
+       font-weight: 600;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+       border-radius: 4px;
+       transition: all 0.3s ease;
+     }
+     
+     .slide-btn:hover {
+       background-color: #e4b419;
+       transform: translateY(-3px);
+     }
+     
+     .slider-controls {
+       position: absolute;
+       bottom: 30px;
+       left: 0;
+       right: 0;
+       display: flex;
+       justify-content: center;
+       z-index: 10;
+     }
+     
+     .slider-dot {
+       width: 12px;
+       height: 12px;
+       background-color: rgba(255, 255, 255, 0.5);
+       border-radius: 50%;
+       margin: 0 5px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+     }
+     
+     .slider-dot.active {
+       background-color: #f7c427;
+       transform: scale(1.2);
+     }
+     
+     .slider-arrows {
+       position: absolute;
+       top: 50%;
+       left: 0;
+       right: 0;
+       display: flex;
+       justify-content: space-between;
+       z-index: 10;
+       transform: translateY(-50%);
+       padding: 0 30px;
+     }
+     
+     .slider-arrow {
+       width: 50px;
+       height: 50px;
+       background-color: rgba(0, 0, 0, 0.5);
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       cursor: pointer;
+       transition: all 0.3s ease;
+     }
+     
+     .slider-arrow:hover {
+       background-color: rgba(0, 0, 0, 0.8);
+     }
+     
+     .slider-arrow i {
+       color: white;
+       font-size: 1.5rem;
+     }
+     
+     @media (max-width: 768px) {
+       .slide-title {
+         font-size: 2rem;
+       }
+       
+       .slide-subtitle {
+         font-size: 1.2rem;
+       }
+       
+       .slide-btn {
+         padding: 12px 24px;
+       }
+       
+       .slider-arrows {
+         padding: 0 15px;
+       }
+       
+       .slider-arrow {
+         width: 40px;
+         height: 40px;
+       }
+     }
