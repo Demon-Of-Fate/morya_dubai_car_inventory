@@ -28,6 +28,7 @@ Route::get('/test',function(){
 });
 
 Route::get('/collection', [HomeController::class, 'Collection'])->name('collection');
+Route::post('search/sort', [HomeController::class, 'searchBySort']);
 
 Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name('testimonial');
 
