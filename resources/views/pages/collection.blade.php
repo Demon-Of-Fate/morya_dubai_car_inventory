@@ -54,8 +54,7 @@
                 <div class="filter-p">
                     <p class="d-flex fs-5">Filters:</p>
                 </div>
-                <div class="filtersbtn" data-modal="filter"></div>
-
+                <div class="filtersbtn" data-modal="filter" data-bs-toggle="modal" data-bs-target="#exampleModal"></div>
             </div>
 
             <p class="fs-5">
@@ -129,8 +128,103 @@
 </div>
 @include('./layout/filter-modal')
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="{{url('/search/byfilter')}}" class="bbtmodal-form">
+                @csrf
+                <div class="modal-body">
+                    <fieldset>
+                        <label>KMS Driven</label>
+                        <ul class="checkboxinput-list">
+                            <li>
+                                <input type="checkbox" name="kms" id="kms-brandnew" value="0-0">
+                                <label for="kms-brandnew">Brand New</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="kms" id="kms0-5000" value="0-5000">
+                                <label for="kms0-5000">0 - 5000</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="kms" id="kms5000-10000" value="5000-10000">
+                                <label for="kms5000-10000">5000 - 10000</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="kms" id="kms10000-15000" value="10000-15000">
+                                <label for="kms10000-15000">10000 - 15000</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="kms" id="kms15000-20000" value="15000-20000">
+                                <label for="kms15000-20000">15000 - 20000</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="kms" id="kms20000above" value="20000-100000">
+                                <label for="kms20000above">20000 & Above</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <label>Budget</label>
+                        <ul class="radioinput-list">
+                            <li>
+                                <input type="radio" name="price" id="bdgt-lsthn50l" value="1-5000000">
+                                <label for="bdgt-lsthn50l">Less Than 50L</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="price" id="bdgt-50l-1cr" value="5000000-10000000">
+                                <label for="bdgt-50l-1cr">50L to 1Cr</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="price" id="bdgt-1cr-1.5cr" value="10000000-15000000">
+                                <label for="bdgt-1cr-1.5cr">1Cr to 1.5Cr</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="price" id="bdgt-1.5cr-above" value="15000000-50000000">
+                                <label for="bdgt-1.5cr-above">1.5Cr & Above</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <label>Brand</label>
+                        <div class="inputgrp slctinput">
+                            <select name="brand" onchange="this.form.submit()">
+                                <option value="">Select Brand</option>
+                                <option value="audi">Audi</option>
+                                <option value="bmw">BMW</option>
+                                <option value="jaguar">Jaguar</option>
+                                <option value="land-rover">Land Rover</option>
+                                <option value="nissan">Nissan</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="mazda">Mazda</option>
+                                <option value="mercedes benz">Mercedes Benz</option>
+                                <option value="lotus">Lotus</option>
+                                <option value="bentley">Bentley</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="ssangyong">Ssangyong</option>
+                                <option value="volkswagen">Volkswagen</option>
+
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Apply Filter</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
 <script>
-    $('#sortbtn').on('change', function(e){
+    $('#sortbtn').on('change', function(e) {
         $(this).closest('form').submit();
     });
 </script>
