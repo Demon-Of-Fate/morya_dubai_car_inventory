@@ -31,6 +31,8 @@ Route::get('/collection', [HomeController::class, 'Collection'])->name('collecti
 Route::post('search/sort', [HomeController::class, 'searchBySort']);
 Route::get('/car/{id}', [HomeController::class, 'carDetails']);
 
+Route::post('search/byfilter', [HomeController::class, 'searchByFilter']);
+
 Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name('testimonial');
 
 Route::get('/about', [AboutController::class, 'about'])->name('about');
