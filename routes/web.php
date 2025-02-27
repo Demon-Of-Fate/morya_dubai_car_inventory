@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SentMailController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,7 @@ Route::get('/test',function(){
 
 Route::get('/collection', [HomeController::class, 'Collection'])->name('collection');
 Route::post('search/sort', [HomeController::class, 'searchBySort']);
-Route::get('/car/{id}', [HomeController::class, 'carDetails']);
+Route::get('/car/{id}', [HomeController::class, 'carDetails'])->name('carDetail');
 
 Route::post('search/byfilter', [HomeController::class, 'searchByFilter']);
 
@@ -38,3 +39,7 @@ Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name(
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::get('/faq', [FaqController::class, 'faq'])->name('faq');
+
+
+Route::post('send-attach-mail',[SentMailController::class, 'send_attach_mail'])->name('send.attach.mail');
+Route::post('send-mail',[SentMailController::class, 'send_mail'])->name('send.mail');
