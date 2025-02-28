@@ -180,7 +180,7 @@
                     <img src="https://www.app.moryacarsdubai.com/upload/car_images/{{$c->images}}" alt="{{$c->variant}}" class="img-fluid w-100" alt="car image" style="height: 15rem; object-fit: cover;">
                 </div>
                 <div class="px-4">
-                    <p style="font-size: 1.7rem;">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
+                    <p class="fs-5">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
                     <div class="d-flex justify-content-between align-items-center px-1">
                         <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
                             <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-wrench"></i></span>
