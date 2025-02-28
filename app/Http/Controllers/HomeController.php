@@ -11,9 +11,17 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function Home(){
-        $data = DB::table('car_images')->get();
         // return $data;
-        return view('home'); 
+        $weekback = date('Y-m-d', time() + (60 * 60 * 24 * -15) );
+        $cars=cars::select('cars.id','brand','model', 'variant','regional_speck','status','usedkm', 'fueltype','bookflag','pricings.sellingprice','mfgDate','bookdate','car_images.images','car_images.main_image')->leftJoin('pricings','cars.id','=','pricings.carId')->join('car_images', 'cars.id', '=', 'car_images.carId')->where('car_images.main_image','=','1');
+        $cars =$cars->where('bookflag', '=', '1');
+        // $cars =$cars->where('status', '=', '1');
+        $cars =$cars->where('status', '=', '0');
+        
+        $cars =$cars->orWhere('bookdate', '>', $weekback);
+        $cars = $cars->paginate(3);
+        // return $cars;
+        return view('home',compact('cars')); 
     }
 
     public function Collection(){
