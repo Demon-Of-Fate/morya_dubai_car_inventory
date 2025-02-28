@@ -1,19 +1,12 @@
 <nav class="bg-dark " style="z-index: 5;">
     <div id="bignav" class="text-light px-4">
         <div>
-            <img src="{{asset('img/logo.png')}}" alt="company-icon" class="img-fluid">
+            <a href="{{ route('home') }}">
+            <img src="{{asset('img/logo.png')}}" alt="company-icon" class="img-fluid"></a>
         </div>
         <div class="d-flex justify-content-between align-items-center px-3" style="width: 100%;">
             <ol class="d-flex justify-content-evenly pl-2 mt-3 navbarlist z-index">
-                <a href="#" id="homedropdown">Home <span class="text-warning">></span></a>
-                <div id="homenavbar">
-                    <div id="navbar1">
-                        <a href="#">Limousine</a>
-                        <a href="#">Retal Service</a>
-                        <a href="#">Luxury Cars</a>
-                        <a href="#">RTL Limunose</a>
-                    </div>
-                </div>
+                <a href="{{ route('home') }}" >Home </a>
                 <a href="#" id="aboutdropdown">About us <span class="text-warning">></span></a>
                 <div id="aboutnavbar">
                     <div id="navbar1">
@@ -23,22 +16,8 @@
                         <a href="{{route ('about')}}">About</a>
                     </div>
                 </div>
-                <a href="#" id="productdropdown">products <span class="text-warning">></span></a>
-                <div id="productnavbar">
-                    <div id="navbar1">
-                        <a href="#">Shop</a>
-                        <a href="#">Cart</a>
-                        <a href="#">Checkout</a>
-                        <a href="#">My Account</a>
-                    </div>
-                </div>
-                <a href="#" id="blogdropdown">blog <span class="text-warning">></span></a>
-                <div id="blognavbar">
-                    <div id="navbar1">
-                        <a href="#">Journey</a>
-                        <a href="#">Mission</a>
-                    </div>
-                </div>
+
+                <a href="{{ route ('collection')}}" id="blogdropdown">Our Collection</a>
                 <a href="{{ route('contactPage') }}">contacts</a>
             </ol>
 
@@ -60,33 +39,47 @@
             <div id="smalldropdown">
                 <i class="fa-solid fa-bars"></i>
             </div>
+           
+            {{-- <div id="small-nav-links" class="d-flex flex-column" style="display: none;">
+                <a href="{{ route('home') }}">Home</a>
+                <a href="#">About</a>
+                <a href="#">Our Collection</a>
+                <a href="{{ route('contactPage') }}">Contact</a>
+            </div> --}}
+            
+            
+        </div>
+    </div>
+    <div class="container-fulid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Faq</a>
+                        <a class="dropdown-item" href="#">Testimonial</a>
+                        <a class="dropdown-item" href="#">About Us</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Our Collection</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Contact</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
 
 <script>
     $(document).ready(function() {
-        $("#homedropdown").hover(
-            function() {
-                $("#homenavbar").stop(true, true).fadeIn();
-            },
-            function() {
-                setTimeout(function() {
-                    if (!$("#homenavbar:hover").length) {
-                        $("#homenavbar").fadeOut();
-                    }
-                }, 50);
-            }
-        );
-
-        $("#homenavbar").hover(
-            function() {
-                $(this).stop(true, true).fadeIn();
-            },
-            function() {
-                $(this).fadeOut();
-            }
-        );
 
         $("#aboutdropdown").hover(
             function() {
@@ -109,49 +102,35 @@
                 $(this).fadeOut();
             }
         );
+        $('#smallnavbar').on("click", function(){
+            var navbar = $('#navbarNav');
+                // Toggle the "show" class
+                navbar.toggleClass('show');
+                if(navbar.hasClass('show')){
 
-        $("#productdropdown").hover(
-            function() {
-                $("#productnavbar").stop(true, true).fadeIn();
-            },
-            function() {
-                setTimeout(function() {
-                    if (!$("#productnavbar:hover").length) {
-                        $("#productnavbar").fadeOut();
-                    }
-                }, 50);
-            }
-        );
+                }
+        });
+        $('#navbarNav').click(function (event) {
+                // Check if the target of the click is not a link inside the navbar
+                if (!$(event.target).closest('a').length) {
+                    $(this).removeClass('show');
+                    $(this).css('max-height', '0');
+                }
+            });    
 
-        $("#productnavbar").hover(
-            function() {
-                $(this).stop(true, true).fadeIn();
-            },
-            function() {
-                $(this).fadeOut();
-            }
-        );
+            $('.nav-item.dropdown').click(function (e) {
+                e.stopPropagation();  // Prevent event from bubbling up and closing the menu
+                $(this).toggleClass('show');
+                $(this).children('.dropdown-menu').toggle();
+                // $(this).children('.dropdown-menu').stop(true, true).fadeToggle(300)
+            });
+            $(document).click(function (e) {
+                if (!$(e.target).closest('.nav-item.dropdown').length) {
+                    $('.nav-item.dropdown').removeClass('show');
+                    $('.dropdown-menu').hide();
+                }
+            });    
+        
 
-        $("#blogdropdown").hover(
-            function() {
-                $("#blognavbar").stop(true, true).fadeIn();
-            },
-            function() {
-                setTimeout(function() {
-                    if (!$("#blognavbar:hover").length) {
-                        $("#blognavbar").fadeOut();
-                    }
-                }, 50);
-            }
-        );
-
-        $("#blognavbar").hover(
-            function() {
-                $(this).stop(true, true).fadeIn();
-            },
-            function() {
-                $(this).fadeOut();
-            }
-        );
     });
 </script>

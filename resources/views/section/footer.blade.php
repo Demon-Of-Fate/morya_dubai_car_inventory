@@ -1,6 +1,14 @@
+<style>
+  @media (max-width: 768px){
+    .subscribe{
+      flex-direction: column;
+    }
+  }
+</style>
+
 <footer class="bg-dark">
     <div class="container p-5" style="border-bottom:1px solid grey;">
-        <div class="d-flex justify-content-center align-items-center mx-auto" style="width: 80%;">
+        <div class="d-flex justify-content-center align-items-center mx-auto subscribe" style="width: 80%;">
             <div style="width:100%" class="text-center">
                 <span style="color:#D7B65D;font-size:1.2rem">Want to know about our offers first?</span>
                 <span class="text-light" style="font-size:2rem">Subscribe our newsletter</span>
@@ -10,7 +18,8 @@
     </div>
     <div class="container p-5">
         <div class="d-flex justify-content-center align-items-center">
-            <img src="http://limme.like-themes.com/wp-content/uploads/2019/06/logo_1x_white.png" alt="logo">
+          <a href="{{ route('home') }}">
+            <img src="{{asset('img/logo.png')}}" alt="company-icon" class="img-fluid"></a>
         </div>
         <div class="mt-5">
             <div class="row mt-5">

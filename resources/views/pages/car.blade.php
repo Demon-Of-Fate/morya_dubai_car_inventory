@@ -1,14 +1,47 @@
 @extends('layout.user_layout')
 @section('styleCode')
 <style>
-    .carousel-item-image {
+    /* .carousel-item-image {
         flex: 1;
         padding: 0 10px;
     }
 
     .carousel-inner {
         padding: 10px 0;
+    } */
+
+    .carousel-inner {
+      padding: 0.5em;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+      background-color: #000000;
+      width: 8vh;
+      height: 8vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  .carousel-item img{
+    padding: 5px;
+}
+@media (min-width: 768px) {
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 33.333333%;
+    display: block;
+}
+.carousel-inner {
+    display: flex;
+}
+
+}
+@media (max-width: 768px) {
+    .pagecontainer {
+        padding-top: 20px !important; 
     }
+}
 
     /* Apply smooth transition to the carousel items */
 </style>
@@ -24,7 +57,7 @@
                 <h2>{{$cars->brand}} {{$cars->model}} {{$cars->variant}}</h2>
             </div>
             <div class="details w-50">
-                <ul>
+                <ul class="list-unstyled">
                     <li><span class="key">Reg. Year : </span><span class="val">{{date('Y', strtotime($cars->regDate))}}</span></li>
                     <li><span class="key">KMS : </span><span class="val">{{$cars->usedKm}}</span></li>
                     <li><span class="key">Fuel Type : </span><span class="val">{{$cars->fuelType}}</span></li>
@@ -34,7 +67,27 @@
     </div>
 </div>
 {{-- start --}}
-<div id="carouselExampleControls" class="carousel pointer-event" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach($images as $i)
+
+        <div class="carousel-item">
+            <img class="img-fluid" alt="Luxury Cars" src="https://www.app.moryacarsdubai.com/upload/car_images/{{$i->images}}">
+        </div>
+        @endforeach
+     
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+
+{{-- <div id="carouselExampleControls" class="carousel pointer-event" data-bs-ride="carousel">
     <div class="carousel-inner">
 
         <div class="carousel-item active">
@@ -45,7 +98,6 @@
                         <img class="img-fluid " alt="Luxury Cars" src="https://www.app.moryacarsdubai.com/upload/car_images/{{$i->images}}">
                     </div>
                 @endforeach
-                
             </div>
         </div>
 
@@ -100,7 +152,7 @@
         <span class="carousel-control-next-icon bg-" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> --}}
 
 {{-- end --}}
 
@@ -215,23 +267,61 @@
         <div class="bbtmodal-cntnt-grp">
             <h3 class="h4 title text-center">Request A Call</h3>
             
-            <form method="post" action="{{route('send.mail')}}" data-parsley-validate="" id="form">
+            {{-- <form method="post" action="{{route('send.mail')}}" data-parsley-validate="" id="form">
                 @csrf
-                <input type="hidden" name="pageurl" id="pageurl" value="{{$cars->brand}} {{$cars->model}} {{$cars->variant}}">
-                <div class="inputgrp">
-                    <input type="text" placeholder="Name" name="name" required="">
+                <div class="row">
+                    <input type="hidden" name="pageurl" id="pageurl" value="{{$cars->brand}} {{$cars->model}} {{$cars->variant}}">
+                <div class="inputgrp col-md-12">
+                    <input type="text" placeholder="Name" name="name" class="" required="">
                 </div>
-                <div class="inputgrp">
+                <div class="inputgrp col-md-12">
                     <input type="email" placeholder="Email" name="email" data-parsley-trigger="change" required="">
                 </div>
-                <div class="inputgrp">
+                <div class="inputgrp col-md-12">
                     <input type="text" placeholder="Phone" pattern="[0-9]{10}" title="10 digit valid format XXXXXXXXXX" maxlength="10" min="10" name="mobile" required="">
                 </div>
-                <div class="inputgrp">
+                <div class="inputgrp col-md-12">
                     <textarea placeholder="Message" name="message"></textarea>
                 </div>
-                
-                <button type="submit" class="frmbtn">Submit</button>
+ 
+                </div>
+                               
+                <button type="submit" class="frmbtn btn  bg-dark text-light ">Submit</button>
+            </form> --}}
+            <form method="post" action="{{route('send.mail')}}" data-parsley-validate="" id="form">
+                @csrf
+                <div class="row">
+                    <input type="hidden" name="pageurl" id="pageurl" value="{{$cars->brand}} {{$cars->model}} {{$cars->variant}}">
+                    
+                    <!-- Use smaller column widths if you want side-by-side fields -->
+                    <div class="col-md-6 mb-3">
+                        <div class="inputgrp">
+                            <input type="text" class="form-control" placeholder="Name" name="name" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="inputgrp">
+                            <input type="email" class="form-control" placeholder="Email" name="email" data-parsley-trigger="change" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <div class="inputgrp">
+                            <input type="text" class="form-control" placeholder="Phone" pattern="[0-9]{10}" title="10 digit valid format XXXXXXXXXX" maxlength="10" min="10" name="mobile" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <div class="inputgrp">
+                            <textarea class="form-control" placeholder="Message" name="message"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <button type="submit" class="frmbtn btn bg-dark text-light">Submit</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -241,4 +331,132 @@
   </div>
 </div>
 
+
+
+@endsection
+
+@section('scriptCode')
+<script type="text/javascript">
+
+// $(document).ready(function(){
+    // Set the first carousel item as active
+    // $(".carousel-inner .carousel-item:first").addClass("active");
+    
+    // Get carousel element
+    // var multipleCardCarousel = document.querySelector("#carouselExampleControls");
+    
+    // Function to handle the carousel behavior
+    // function setupCarousel() {
+        // if (window.matchMedia("(min-width: 768px)").matches) {
+            // Desktop version - multi-card display with custom scrolling
+            
+            // Initialize Bootstrap carousel with no auto-sliding
+            // var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+            //     interval: false,
+            //     wrap: false
+            // });
+            
+            // Calculate dimensions
+            // var carouselInner = $("#carouselExampleControls .carousel-inner");
+            // var carouselWidth = carouselInner[0].scrollWidth;
+            // var cardWidth = $(".carousel-item").width();
+            // var scrollPosition = 0;
+            
+            // Configure carousel items for horizontal scrolling
+            // carouselInner.css("overflow-x", "hidden");
+            // $(".carousel-item").css({
+            //     "display": "inline-block",
+                // "flex": "0 0 33.333333%"  // Show 3 items at once (adjust as needed)
+            // });
+            
+            // Next button click handler
+            // $("#carouselExampleControls .carousel-control-next").off("click").on("click", function() {
+                // Calculate max scroll position
+            //     var maxScrollPosition = carouselWidth - (cardWidth * 3); // 3 visible items
+                
+            //     if (scrollPosition < maxScrollPosition) {
+            //         scrollPosition += cardWidth;
+            //         carouselInner.animate(
+            //             { scrollLeft: scrollPosition },
+            //             600
+            //         );
+            //     }
+            // });
+            
+            // Previous button click handler
+            // $("#carouselExampleControls .carousel-control-prev").off("click").on("click", function() {
+            //     if (scrollPosition > 0) {
+            //         scrollPosition -= cardWidth;
+            //         carouselInner.animate(
+            //             { scrollLeft: scrollPosition },
+            //             600
+            //         );
+            //     }
+            // });
+            
+            // Remove standard sliding behavior
+//             $(multipleCardCarousel).removeClass("slide");
+            
+//         }else {
+//       $(multipleCardCarousel).addClass("slide");
+//   }
+
+
+//     }
+    
+    // Initialize on page load
+    // setupCarousel();
+    
+    // Re-initialize on window resize
+    // $(window).resize(function() {
+        // Reset scroll position
+        // $("#carouselExampleControls .carousel-inner").scrollLeft(0);
+        // scrollPosition = 0;
+        
+        // Re-setup the carousel
+//         setupCarousel();
+//     });
+// });
+
+$(document).ready(function(){
+ 
+ //$('#carouselExampleControls.carousel-inner.carousel-item').first().addClass("active");  
+ $(".carousel-inner .carousel-item:first").addClass("active");
+});
+
+   var multipleCardCarousel = document.querySelector(
+     "#carouselExampleControls"
+     );
+   if (window.matchMedia("(min-width: 768px)").matches) {
+     var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+       interval: false,
+   });
+     var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+     var cardWidth = $(".carousel-item").width();
+     var scrollPosition = 0;
+     $("#carouselExampleControls .carousel-control-next").on("click", function () {
+       if (scrollPosition < carouselWidth - cardWidth * 4) {
+         scrollPosition += cardWidth;
+         $("#carouselExampleControls .carousel-inner").animate(
+           { scrollLeft: scrollPosition },
+           600
+           );
+     }
+ });
+     $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+       if (scrollPosition > 0) {
+         scrollPosition -= cardWidth;
+         $("#carouselExampleControls .carousel-inner").animate(
+           { scrollLeft: scrollPosition },
+           600
+           );
+     }
+ });
+ } else {
+     $(multipleCardCarousel).addClass("slide");
+ }
+
+    
+      
+    </script>
 @endsection
