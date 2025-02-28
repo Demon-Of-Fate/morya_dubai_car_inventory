@@ -176,16 +176,16 @@
     /* Home Page Service Part End */
 
     /* Home page hero start */
-    .homehero {
+    /* .homehero {
         height: 100vh;
     }
 
     .homehero div #homeheroheading {
         font-size: 2.5rem;
         width: 70%;
-    }
+    } */
 
-    .homehero div button {
+    /* .homehero div button {
         background-color: #D7B65D;
         border: 1px solid #D7B65D;
         padding: 10px 40px;
@@ -194,12 +194,12 @@
     .homehero div {
         width: 30%;
         padding: 0 30px;
-    }
-
+    } */
+/* 
     .homehero p img {
         width: 100%;
         height: 330px;
-    }
+    } */
 
     .slider-container {
        position: relative;
@@ -341,6 +341,10 @@
        color: white;
        font-size: 1.5rem;
      }
+     .incredible{
+      font-size: 5rem;
+      text-align: center;
+   }
      
      @media (max-width: 768px) {
        .slide-title {
@@ -362,5 +366,17 @@
        .slider-arrow {
          width: 40px;
          height: 40px;
+
        }
+       .incredible{
+        font-size: 4rem;
+        text-align: center;
      }
+    }
+    @media (max-width: 480px) {
+      .incredible{
+        font-size: 3rem;
+        text-align: center;
+     }
+      
+    }
