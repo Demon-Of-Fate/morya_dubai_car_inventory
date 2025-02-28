@@ -269,23 +269,23 @@
      <div class="slider">
        <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');">
          <div class="slide-content">
-           <h2 class="slide-title">Luxury Limousine Service</h2>
+           <h2 class="slide-title">Luxury Mourya Cars Service</h2>
            <p class="slide-subtitle">Experience the ultimate in luxury transportation for any occasion</p>
-           <a href="#" class="slide-btn">Book Now</a>
+           <a href="{{route('collection')}}" class="slide-btn">Book Now</a>
          </div>
        </div>
        <div class="slide" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_03.jpg');">
          <div class="slide-content">
            <h2 class="slide-title">Corporate Transportation</h2>
            <p class="slide-subtitle">Reliable and professional service for your business needs</p>
-           <a href="#" class="slide-btn">Learn More</a>
+           <a href="{{route('collection')}}" class="slide-btn">View Collection</a>
          </div>
        </div>
        <div class="slide" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_02.jpg');">
          <div class="slide-content">
            <h2 class="slide-title">Special Events</h2>
            <p class="slide-subtitle">Make your wedding, prom or special occasion memorable</p>
-           <a href="#" class="slide-btn">View Packages</a>
+           <a href="{{route('collection')}}" class="slide-btn">View Cars</a>
          </div>
        </div>
      </div>
@@ -377,8 +377,8 @@
             
             <p id="homeheroheading" class="fs-1 w-50 text-center mt-5"><span style="color: #D7B65D;">Luxury Cars</span> for Maximum
                 Satisfaction</p>
-            <p>Nullam sed ultricies erat, nec euismod metus. Morbi porttitor sapien vitae leo scelerisque.</p>
-            <button class="btn mb-5">Read More</button>
+            <p class="mb-5">Nullam sed ultricies erat, nec euismod metus. Morbi porttitor sapien vitae leo scelerisque.</p>
+            {{-- <button class="btn mb-5">Read More</button> --}}
             
 
         </div>
