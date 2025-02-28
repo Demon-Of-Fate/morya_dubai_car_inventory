@@ -25,7 +25,7 @@
                 <h1 class="text-warning navbarbigwhatsaap"><i class="fa-brands fa-whatsapp"></i></h1>&nbsp;&nbsp;
                 <div class="navbarbigwhatsaap1">
                     <span class="text-warning fw-light">Call to Book an Order</span>
-                    <p style="font-size:1.3rem" class="fw-light">8-800-10-500</p>
+                    <p style="font-size:1.3rem" class="fw-light">+971569246931</p>
                 </div>
             </div>
             <!-- <h3 class="navbarusericon"><i class="fa-solid fa-user"></i></h3> -->

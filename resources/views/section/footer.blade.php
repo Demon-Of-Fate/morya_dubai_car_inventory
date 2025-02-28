@@ -26,7 +26,7 @@
                 <div class="col-md-3 text-light ">
                     <div style="border-right:2px dashed grey;" class="d-flex justify-content-center align-items-center flex-column">
                         <span style="color:#D7B65D;font-size:1.3rem"><i class="fa-solid fa-phone"></i></span>
-                        <span>0 (550) 680-34-12</span>
+                        <span>+971569246931</span>
                         <span style="color:#D7B65D">Round-the-clock</span>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                 <div class="col-md-3 text-light">
                     <div style="border-right:2px dashed grey;" class="d-flex justify-content-center align-items-center flex-column">
                         <span style="color:#D7B65D;font-size:1.3rem"><i class="fa-solid fa-message"></i></span>
-                        <span>info@limme-theme.com</span>
-                        <span style="color:#D7B65D">support@limme-theme.com</span>
+                        <span>moryacar@dubaigmail.com</span>
+                        <span style="color:#D7B65D">Info@moryacarsdubai.com</span>
                     </div>
                 </div>
                 <div class="col-md-3 text-light">
