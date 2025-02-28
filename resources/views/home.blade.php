@@ -54,6 +54,11 @@
         padding: 10px 40px;
     }
 
+    .carnamecontent{
+      height: 25px;
+      overflow-y: hidden;
+    }
+
     /* .homehero div {
         width: 50%;
         padding: 0 30px;
@@ -144,7 +149,24 @@
      
      .slide-btn:hover {
        background-color: #e4b419;
+       color: black;
        transform: translateY(-3px);
+     }
+
+     .buttonhoverstyle{
+      display: inline-block;
+      width: 100%;
+      transition: all 0.3s ease;
+     }
+     .buttonhoverstyle1{
+       display: inline-block;
+       transition: all 0.3s ease;
+      }
+      .buttonhoverstyle1:hover{
+        transform: translateY(-3px);
+       }
+     .buttonhoverstyle:hover{
+        transform: translateY(-3px);
      }
      
      .slider-controls {
@@ -267,21 +289,22 @@
  <!-- Start slider Section -->
    <div class="slider-container">
      <div class="slider">
-       <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');">
+       <!-- <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');"> -->
+       <div class="slide active" style="background-image: url('{{ asset('img/dubai_burj_car.jpg') }}');">
          <div class="slide-content">
            <h2 class="slide-title">Luxury Mourya Cars Service</h2>
            <p class="slide-subtitle">Experience the ultimate in luxury transportation for any occasion</p>
            <a href="{{route('collection')}}" class="slide-btn">Book Now</a>
          </div>
        </div>
-       <div class="slide" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_03.jpg');">
+       <div class="slide" style="background-image: url('{{ asset('img/dubai_sand_car.jpg') }}');">
          <div class="slide-content">
            <h2 class="slide-title">Corporate Transportation</h2>
            <p class="slide-subtitle">Reliable and professional service for your business needs</p>
            <a href="{{route('collection')}}" class="slide-btn">View Collection</a>
          </div>
        </div>
-       <div class="slide" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_02.jpg');">
+       <div class="slide" style="background-image: url('{{ asset('img/SLIDE_02.jpg') }}');">
          <div class="slide-content">
            <h2 class="slide-title">Special Events</h2>
            <p class="slide-subtitle">Make your wedding, prom or special occasion memorable</p>
@@ -403,7 +426,7 @@
                   <img src="https://www.app.moryacarsdubai.com/upload/car_images/{{$c->images}}" alt="{{$c->variant}}" class="img-fluid w-100" alt="car image" style="height: 15rem; object-fit: cover;">
               </div>
               <div class="px-4">
-                  <p class="fs-5 mt-2">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
+                  <p class="carnamecontent fs-5 mt-2">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
                   <div class="d-flex justify-content-between align-items-center px-1">
                       <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
                           <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-wrench"></i></span>
@@ -422,76 +445,17 @@
                       <p><span style="color:#D7B65D;font-size:1.5rem">₹ </span>{{$c->sellingprice}}</p>
                       <p>⭐⭐⭐⭐</p>
                   </div>
-                  <a href="{{ route('carDetail',$c->id) }}"><button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button></a>
+                  <a class="buttonhoverstyle" href="{{ route('carDetail',$c->id) }}"><button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button></a>
               </div>
           </div>
       </div>
       @endif
       @endforeach
-        {{-- <div class="col-md-6 col-lg-6 col-xl-4">
-            <div class="servicecard p-3" style="border:1px grey dotted;">
-                <div class="d-flex justify-content-center">
-                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
-                </div>
-                <div class="px-4">
-                    <p style="font-size: 1.7rem;">Cadillac Limousine XTS</p>
-                    <p>Insured, leather interior, air conditioning, rain sensor, panoramic roof</p>
-                    <div class="d-flex justify-content-between align-items-center px-1">
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center my-2">
-                        <p><span style="color:#D7B65D;font-size:1.5rem">260$ / </span>per hour</p>
-                        <p>⭐⭐⭐⭐</p>
-                    </div>
-                    <button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">Get Limousine</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xl-4">
-            <div class="servicecard p-3" style="border:1px grey dotted;">
-                <div class="d-flex justify-content-center">
-                    <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
-                </div>
-                <div class="px-4">
-                    <p style="font-size: 1.7rem;">Cadillac Limousine XTS</p>
-                    <p>Insured, leather interior, air conditioning, rain sensor, panoramic roof</p>
-                    <div class="d-flex justify-content-between align-items-center px-1">
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-bag-shopping"></i></span>
-                            <span>4 Seats</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center my-2">
-                        <p><span style="color:#D7B65D;font-size:1.5rem">260$ / </span>per hour</p>
-                        <p>⭐⭐⭐⭐</p>
-                    </div>
-                    <button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">Get Limousine</button>
-                </div>
-            </div>
-        </div> --}}
+
     </div>
     <div class="d-flex justify-content-center mt-4 mb-5">
-      <button class="btn" style="padding: 1rem 2rem; border-radius:15px; border:none; background-color: #D7B65D;">
-        <a class="text-dark" style="text-decoration: none;" href="{{ route('collection') }}">View Collections</a>
+      <button class="btn buttonhoverstyle1" style="padding: 1rem 2rem; border-radius:15px; border:none; background-color: #D7B65D;">
+        <a class="text-dark " style="text-decoration: none;" href="{{ route('collection') }}">View Collections</a>
       </button>
     </div>
 </div>
@@ -499,7 +463,7 @@
 <!-- Collection Section End  -->
 
 
-<div style="background-image:url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" class="text-center py-5">
+<div style="background-image:url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-repeat:no-repeat;background-size:cover;" class="text-center py-5">
     <div class="d-flex justify-content-center align-items-center flex-column">
         <p class="" style="width: 30%;font-size:1.3rem">We value the time and quality of travel for each of our clients</p>
         <p class="d-flex flex-column incredible" style="width:80%;"><span class="p-0 m-0 bg-gold">Incredible</span> <span class="p-0 m-0 comfort">comfort</span></p>
@@ -546,7 +510,7 @@
 </div>
 
 
-<div style="background-image: url('https://images.unsplash.com/photo-1562373170-3bb8cc71d3c3?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');height:100vh;" class="d-flex justify-content-center align-items-center">
+<div style="background-image: url('https://images.unsplash.com/photo-1562373170-3bb8cc71d3c3?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');height:100vh;;background-repeat:no-repeat;background-size:cover;" class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <p class="text-center" style="font-size:3rem;color:white"><span class="text-warning">To the airport</span> <br> with maximum comfort</p>
         <p class="text-light text-center" style="font-size:1.5rem;width:65%">We value the time and quality of travel for each of our clients</p>
