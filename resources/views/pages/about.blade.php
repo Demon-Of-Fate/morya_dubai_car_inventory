@@ -80,6 +80,19 @@ ul.icon-righttext-list>li .icon{
     box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 1rem #f3cb47, 0 0 0.8rem #f3cb47, 0 0 1rem #f3cb47, inset 0 0 1.3rem #f3cb47;
     color: #f3cb47;
 }
+.text-yellow{
+    color: #D7B65D;
+}
+.banner-faq{
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position:center;
+    width: 100%;
+    min-height: 25rem;
+    padding: 0px 50px;
+
+}
 .bg-gold{
     background: radial-gradient(circle, rgba(234, 194, 64, 1) 60%, rgba(176, 77, 1, 1) 100%);
 }
@@ -88,6 +101,7 @@ ul.icon-righttext-list>li .icon{
     width: 25rem;
     border-radius: 50px;
 }
+
 @media (max-width: 769px){
     .whyus-experience-sec .csh1 {
     font-size: 50px;
@@ -110,8 +124,20 @@ ul.icon-righttext-list>li .icon{
 @endsection
 
 @section('content')
-<div class="static">
-    <h1 class="mb-5">ABOUT US</h1>
+
+<div class="container-fluid banner-faq text-light d-flex justify-content-start align-items-center" style="background-image: url('{{asset('img/car-banner3.jpg')}}')">
+    
+    <div class="d-flex  flex-column justify-content-end">
+        <h3 class=" fs-1 text-yellow">About Us</h3>
+    <h4>
+       <a href="{{route('home')}}"  class="text-light text-decoration-none">Home</a>  /
+        <a href="{{route('about')}}" class="text-light text-decoration-none"> About</a>
+        </h4>
+    </div>
+    
+ </div>
+
+<div class="static mt-5">
     <section class="whyus-experience-sec">
             <div class="container">
                 <div class="sec-row d-flex g-5 row flexrow">

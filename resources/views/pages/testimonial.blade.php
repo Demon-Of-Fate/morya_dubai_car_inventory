@@ -18,17 +18,39 @@
 .bg-gold{
     background: radial-gradient(circle, rgba(234, 194, 64, 1) 60%, rgba(176, 77, 1, 1) 100%);
 }
+.text-yellow{
+    color: #D7B65D;
+}
+.banner-testimonial{
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position:center;
+    width: 100%;
+    min-height: 25rem;
+    padding: 0px 50px;
+
+}
 </style>
 @endsection
 @section('content')
  
+
+<div class="container-fluid banner-testimonial text-light d-flex justify-content-start align-items-center" style="background-image: url('{{asset('img/car-banner3.jpg')}}')">
+    
+   <div class="d-flex  flex-column justify-content-end">
+       <h3 class=" fs-1 text-yellow">Frequently Asked Questions</h3>
+   <h4>
+      <a href="{{route('home')}}"  class="text-light text-decoration-none">Home</a>  /
+       <a href="{{route('testimonial')}}" class="text-light text-decoration-none"> Testimonial</a>
+       </h4>
+   </div>
+</div>
   
   <div class="static">
   <div class="container-fluid">
       
   </div>
-  <h1 class="text-center">Testimonials</h1>
-  
   <div id="container pagecontainer">
   
      <!-- <div class="taggbox-container" style="width:80%;height:100%;overflow: auto; margin:50px auto;">

@@ -1,6 +1,16 @@
 @extends('layout.user_layout')
 @section('styleCode')
 <style>
+    .banner-faq{
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position:center;
+    width: 100%;
+    min-height: 25rem;
+    padding: 0px 50px;
+
+}
     .static h1{
     text-align: center;
     position: relative;
@@ -17,6 +27,9 @@
 .bg-gold{
     background: radial-gradient(circle, rgba(234, 194, 64, 1) 60%, rgba(176, 77, 1, 1) 100%);
 }
+.text-yellow{
+    color: #D7B65D;
+}
 .h1v1 {
     font-family: "Barlow Condensed", arial;
     font-size: 194px;
@@ -30,9 +43,22 @@
 
 @section('content')
 
+<div class="container-fluid banner-faq text-light d-flex justify-content-start align-items-center" style="background-image: url('{{asset('img/car-banner3.jpg')}}')">
+    
+    <div class="d-flex  flex-column justify-content-end">
+        <h3 class=" fs-1 text-yellow">Frequently Asked Questions</h3>
+    <h4>
+       <a href="{{route('home')}}"  class="text-light text-decoration-none">Home</a>  /
+        <a href="{{route('faq')}}" class="text-light text-decoration-none"> FAQ</a>
+        </h4>
+    </div>
+    
+ </div>
+
 <div class="static">
-    <h1 class="mb-5">Frquently Asked Questions</h1>
-    <div class="container mb-5">
+   
+
+    <div class="container mb-5 mt-5">
         <div class="accordion " id="accordionExample">
         <div class="accordion-item ">
         <h2 class="accordion-header" id="headingOne">
