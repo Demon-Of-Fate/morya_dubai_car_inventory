@@ -54,24 +54,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-light" href="#">Home</a>
+                    <a class="nav-link text-light" href="{{route('home')}}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         About
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Faq</a>
-                        <a class="dropdown-item" href="#">Testimonial</a>
-                        <a class="dropdown-item" href="#">About Us</a>
+                        <a class="dropdown-item" href="{{route('faq')}}">Faq</a>
+                        <a class="dropdown-item" href="{{route('testimonial')}}">Testimonial</a>
+                        <a class="dropdown-item" href="{{route('about')}}">About Us</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Our Collection</a>
+                    <a class="nav-link text-light" href="{{route('collection')}}">Our Collection</a>
                 </li>
             
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Contact</a>
+                    <a class="nav-link text-light" href="{{route('contactPage')}}">Contact</a>
                 </li>
             </ul>
         </div>
