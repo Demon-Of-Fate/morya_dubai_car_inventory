@@ -37,6 +37,9 @@
     text-decoration: none;
     color: red ;
 }
+.text-yellow{
+    color: #D7B65D;
+}
 .cntnt-grp{
     background-color: #ffffff;
 }
@@ -77,6 +80,16 @@
     border-bottom: 1px solid #96969c;
     margin-left: 7px;
 }
+.banner-contact{
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: cover; */
+    background-position:center;
+    width: 100%;
+    min-height: 25rem;
+    padding: 0px 50px;
+
+}
 /* .cntctfrm-grp textarea {
     min-height: 120px;
 } */
@@ -101,36 +114,22 @@
     </style>
 @endsection
 @section('content')
-    {{-- <div class="container-fluid">
-        <div style="height: 13rem;"></div>
-        <div class="d-flex justify-content-center align-items-center">
-            <p class="bg-dark rounded text-light text-center py-2" style="width: 80%;box-shadow: 2px 1px 5px 5px #FFC107,2px -1px 5px 5px #FFC107, -2px -1px 5px 5px #FFC107,-2px 1px 5px 5px #FFC107;">Contact Us</p>
-        </div>
-        <div class="container mt-5">
-            <div class="mt-5">
-                <h2>Contact Us</h2>
-                <p>We will always endeavour to respond quickly and reliably to your enquiries</p>
-                <div class="mb-5">
-                    <div class="d-flex align-items-center">
-                        <span style="font-size: 3rem;"><i class="fa-solid fa-envelope"></i></span>&nbsp;&nbsp;&nbsp;
-                        <span class="d-flex flex-column"><span style="font-size: 1.3rem;color:red">info@moryacars.in</span><span>The best way to get answer faster.</span></span>
-                    </div>
 
-                    <div class="d-flex align-items-center">
-                        <span style="font-size: 3rem;"><i class="fa-solid fa-phone-volume"></i></span>&nbsp;&nbsp;&nbsp;
-                        <span class="d-flex flex-column">
-                            <span  style="font-size: 1.3rem;">For Preowned Cars.</span>
-                            <span style="font-size: 1.3rem;color:red">+91 78449 79999</span>
-                        </span>
-                    </div>
-                </div>
-                <div>
-                    <h3>Our Showroom</h3>
-                </div>
-            </div>
-        </div>
-        </div> --}}<div class="static">
-    <h1>CONTACT US</h1>
+<div class="container-fluid banner-contact text-light d-flex justify-content-start align-items-center" style="background-image: url('{{asset('img/car-banner3.jpg')}}')">
+    
+    <div class="d-flex  flex-column justify-content-end">
+        <h3 class=" fs-1 text-yellow">Contacts</h3>
+    <h4>
+       <a href="{{route('home')}}"  class="text-light text-decoration-none">Home</a>  /
+        <a href="{{route('contactPage')}}" class="text-light text-decoration-none"> Contact</a>
+        </h4>
+    </div>
+    
+ </div>
+
+ 
+    <div class="static">
+       
     <section class="whyus-experience-sec">
             <div class="container">
                 <div class="row ">
