@@ -292,22 +292,22 @@
        <!-- <div class="slide active" style="background-image: url('http://limme.like-themes.com/wp-content/uploads/2020/11/SLIDE_05.jpg');"> -->
        <div class="slide active" style="background-image: url('{{ asset('img/dubai_burj_car.jpg') }}');">
          <div class="slide-content">
-           <h2 class="slide-title">Luxury Mourya Cars Service</h2>
-           <p class="slide-subtitle">Experience the ultimate in luxury transportation for any occasion</p>
+           <h2 class="slide-title">Drive Luxury, Own Prestige</h2>
+           <p class="slide-subtitle">Explore our handpicked collection of high-end pre-owned luxury cars at unbeatable prices in Dubai.</p>
            <a href="{{route('collection')}}" class="slide-btn">Book Now</a>
          </div>
        </div>
        <div class="slide" style="background-image: url('{{ asset('img/dubai_sand_car.jpg') }}');">
          <div class="slide-content">
-           <h2 class="slide-title">Corporate Transportation</h2>
-           <p class="slide-subtitle">Reliable and professional service for your business needs</p>
+           <h2 class="slide-title">Luxury Within Reach</h2>
+           <p class="slide-subtitle">Get the best deals on pre-owned Rolls-Royce, Ferrari, Bentley, and more – only at Morya Cars</p>
            <a href="{{route('collection')}}" class="slide-btn">View Collection</a>
          </div>
        </div>
        <div class="slide" style="background-image: url('{{ asset('img/SLIDE_02.jpg') }}');">
          <div class="slide-content">
-           <h2 class="slide-title">Special Events</h2>
-           <p class="slide-subtitle">Make your wedding, prom or special occasion memorable</p>
+           <h2 class="slide-title">Your Dream Car Awaits</h2>
+           <p class="slide-subtitle">Premium quality, expert inspections, and seamless buying experience – Drive luxury with confidence.</p>
            <a href="{{route('collection')}}" class="slide-btn">View Cars</a>
          </div>
        </div>
@@ -356,7 +356,7 @@
           </div>
           <div class="col-lg-4 d-flex mt-3">
             <div class="imageservice1">
-              <img src="http://limme.like-themes.com/wp-content/uploads/2019/06/serv_03-100x100.jpg" alt="service">
+              <img src="https://5.imimg.com/data5/RI/HV/VQ/ANDROID-10111556/product-jpeg-500x500.jpg" alt="service">
             </div>
             <div class="textservice1 px-4">
               <p>Events & Weddings</p>
@@ -510,11 +510,15 @@
 </div>
 
 
-<div style="background-image: url('https://images.unsplash.com/photo-1562373170-3bb8cc71d3c3?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');height:100vh;;background-repeat:no-repeat;background-size:cover;" class="d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-        <p class="text-center" style="font-size:3rem;color:white"><span class="text-warning">To the airport</span> <br> with maximum comfort</p>
-        <p class="text-light text-center" style="font-size:1.5rem;width:65%">We value the time and quality of travel for each of our clients</p>
+<div style="background-image: url('{{ asset('img/homebannerbe.jpg') }}');height:150vh;background-repeat:no-repeat;background-size:cover;" class="d-flex justify-content-center align-items-center">
+    <div class="bg-dark d-flex justify-content-center align-items-center" style="width: 100%;height:150vh;background-color:#00000069 !important">
+
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p class="text-center" style="font-size:3rem;color:white">Exclusive <span class="text`-warning">Luxury Car</span> Deals in Dubai</p>
+        <p class="text-light text-center" style="font-size:1.5rem;width:65%">Find Your Dream Ride Today!</p>
         {{-- <button style="background-color: #D7B65D;padding:1rem 3rem;border:0;font-size:.9rem">Read More</button> --}}
+      </div>
+
     </div>
 </div>
 @endsection
