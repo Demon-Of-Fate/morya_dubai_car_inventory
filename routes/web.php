@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class,'Home']);
+Route::get('/',[HomeController::class,'Home'])->name('home');
 
 Route::get('/contact',function(){
     return view('pages.contact');
