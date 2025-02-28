@@ -44,6 +44,43 @@
             flex-direction: column-reverse;
         }
     }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination li a, .pagination li span {
+        display: block;
+        padding: 8px 12px;
+        border: 1px solid #D7B65D;
+        color: #D7B65D;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .pagination li a:hover {
+        background-color: #D7B65D;
+        color: #fff;
+    }
+
+    .pagination li.active span {
+        background-color: #D7B65D;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .pagination li.disabled span {
+        color: #ccc;
+        border: 1px solid #ccc;
+    }
+
 </style>
 @endsection
 @section('content')
@@ -170,12 +207,35 @@
         @endforeach
     </div>
 </div>
-<div class="bottom-cntnr">
+ <div class="bottom-cntnr">
     <div class="showmorebtn-grp hide-767">
         <div class="blog-pagination" style="text-align: right;">
-            {{ $cars->links() }}
+            @if ($cars->hasPages())
+                <ul class="pagination">
+                    {{-- Previous Page Link --}}
+                    @if ($cars->onFirstPage())
+                        <li class="disabled"><span>&laquo;</span></li>
+                    @else
+                        <li><a href="{{ $cars->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                    @endif
 
+                    {{-- Pagination Elements --}}
+                    @foreach ($cars->links()->elements[0] as $page => $url)
+                        @if ($page == $cars->currentPage())
+                            <li class="active"><span>{{ $page }}</span></li>
+                        @else
+                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @endif
+                    @endforeach
 
+                    {{-- Next Page Link --}}
+                    @if ($cars->hasMorePages())
+                        <li><a href="{{ $cars->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                    @else
+                        <li class="disabled"><span>&raquo;</span></li>
+                    @endif
+                </ul>
+            @endif
         </div>
     </div>
 </div>
