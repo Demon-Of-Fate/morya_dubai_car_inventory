@@ -34,8 +34,9 @@
     <div id="smallnavbar">
         <div id="smallnav" class="bg-dark text-light px-4">
             <div id="smallnavimage">
+                <a href="{{route('home')}}">
                 <img src="{{asset('./img/logo.png')}}" class="img-fluid"style="height:80px" alt="company-icon">
-            </div>
+             </div>
             <div id="smalldropdown">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -102,7 +103,7 @@
                 $(this).fadeOut();
             }
         );
-        $('#smallnavbar').on("click", function(){
+        $('#smalldropdown').on("click", function(){
             var navbar = $('#navbarNav');
                 // Toggle the "show" class
                 navbar.toggleClass('show');
