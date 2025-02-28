@@ -318,8 +318,8 @@
               <img src="http://limme.like-themes.com/wp-content/uploads/2019/06/serv_01-100x100.jpg" alt="service">
             </div>
             <div class="textservice1 px-4">
-              <p>Airport Transfer</p>
-              <span>Pellentesque semper dui eget ferm.</span>
+              <p>Car Transfer</p>
+              <span>Transfer your car from one place to another.</span>
             </div>
           </div>
           <div class="col-lg-4 d-flex mt-3">
@@ -328,7 +328,7 @@
             </div>
             <div class="textservice1 px-4">
               <p>Business Transfer</p>
-              <span>Sed nisi magna, rhoncus nec.</span>
+              <span>Experience the ultimate in luxury transportation for any occasion</span>
             </div>
           </div>
           <div class="col-lg-4 d-flex mt-3">
@@ -337,7 +337,7 @@
             </div>
             <div class="textservice1 px-4">
               <p>Events & Weddings</p>
-              <span>Pellentesque semper dui eget .</span>
+              <span>Make your Weddings Special With our Rental Car .</span>
             </div>
           </div>
         </div>
@@ -377,7 +377,7 @@
             
             <p id="homeheroheading" class="fs-1 w-50 text-center mt-5"><span style="color: #D7B65D;">Luxury Cars</span> for Maximum
                 Satisfaction</p>
-            <p class="mb-5">Nullam sed ultricies erat, nec euismod metus. Morbi porttitor sapien vitae leo scelerisque.</p>
+            <p class="mb-5">Feel the Luxury that can make your every Special moment Memorial with our latest Car Design and Model</p>
             {{-- <button class="btn mb-5">Read More</button> --}}
             
 
@@ -389,53 +389,46 @@
 
         </div>
     </div>
-</div>
+</div>  
 <!-- Hero Section End  -->
 
 <!-- Collection Section Start  -->
-<div class="container">
-    <div class="row g-4">
-
-        @foreach ($cars as $c)
-          
-        <div class="col-md-4">
-            <div class="servicecard" style="border:1px grey dotted;">
-                <div class="d-flex ">
-                    <img src="https://www.app.moryacarsdubai.com/upload/car_images/{{$c->images}}" alt="{{$c->variant}}" class="img-fluid w-100" alt="car image" style="height: 15rem; object-fit: cover;">
-                </div>
-                <div class="px-4">
-                    <p style="font-size: 1.7rem;">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
-                    <!-- <p>Insured, leather interior, air conditioning, rain sensor, panoramic roof</p> -->
-                    <div class="d-flex justify-content-between align-items-center px-1">
-                        <div class="d-flex justify-content-center align-items-center flex-column p-3" style="border: 1px solid #D7B65D;padding:5px;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-wrench"></i></span>
-                            <span>MFG : {{$c->mfgDate}}</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-3" style="border: 1px solid #D7B65D;padding:5px;">
-                            <span title="Drive" style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-car-side"></i></span>
-                            <span>{{$c->usedkm}} KM</span>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center flex-column p-3" style="border: 1px solid #D7B65D;padding:5px;">
-                            <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-gas-pump"></i></span>
-                            <span>{{$c->fueltype}}</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center my-2">
-                        <p itemprop="offers" itemtype="https://schema.org/Offer" itemscope="">
-                            <meta itemprop="priceCurrency" content="INR">
-                            <meta itemprop="price" content="{{$c->sellingprice}}">
-                            ₹{{$c->sellingprice}}
-                        </p>
-                        <p>⭐⭐⭐⭐</p>
-                    </div>
-                    <a href="{{ route('carDetail',$c->id) }}"><button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button></a>
-                </div>
-            </div>
-        </div>
-
-        @endforeach
-
-        <!-- <div class="col-md-6 col-lg-6 col-xl-4">
+<div class="container mt-5">
+    <div class="row g-4 mb-5">
+      @foreach($cars as $c)
+      @if($c->main_image==1)
+      <div class="col-md-6 col-lg-6 col-xl-4">
+          <div class="servicecard " style="border:1px grey dotted;">
+              <div class="d-flex justify-content-center">
+                  <img src="https://www.app.moryacarsdubai.com/upload/car_images/{{$c->images}}" alt="{{$c->variant}}" class="img-fluid w-100" alt="car image" style="height: 15rem; object-fit: cover;">
+              </div>
+              <div class="px-4">
+                  <p style="font-size: 1.7rem;">{{strtoupper($c->brand)}} {{strtoupper($c->model)}} {{strtoupper($c->variant)}}</p>
+                  <div class="d-flex justify-content-between align-items-center px-1">
+                      <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
+                          <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-wrench"></i></span>
+                          <span>MFG : {{$c->mfgDate}}</span>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
+                          <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-car-side"></i></span>
+                          <span>{{$c->usedkm}} KM</span>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center flex-column p-2" style="border: 1px solid #D7B65D;">
+                          <span style="font-size: 1.5rem;color:#D7B65D"><i class="fa-solid fa-gas-pump"></i></span>
+                          <span>{{$c->fueltype}}</span>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center my-2">
+                      <p><span style="color:#D7B65D;font-size:1.5rem">₹ </span>{{$c->sellingprice}}</p>
+                      <p>⭐⭐⭐⭐</p>
+                  </div>
+                  <a href="{{ route('carDetail',$c->id) }}"><button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">View Details</button></a>
+              </div>
+          </div>
+      </div>
+      @endif
+      @endforeach
+        {{-- <div class="col-md-6 col-lg-6 col-xl-4">
             <div class="servicecard p-3" style="border:1px grey dotted;">
                 <div class="d-flex justify-content-center">
                     <img src="http://limme.like-themes.com/wp-content/uploads/2020/11/car_01-768x510.jpg" class="img-fluid" alt="car image" style="height: 13rem;">
@@ -494,8 +487,8 @@
                     <button class="btn mb-4 mt-2 py-3" style="background-color: #D7B65D;width:100%;">Get Limousine</button>
                 </div>
             </div>
-        </div>
-    </div> -->
+        </div> --}}
+    </div>
     <div class="d-flex justify-content-center mt-4 mb-5">
       <button class="btn" style="padding: 1rem 2rem; border-radius:15px; border:none; background-color: #D7B65D;">
         <a class="text-dark" style="text-decoration: none;" href="{{ route('collection') }}">View Collections</a>
@@ -557,7 +550,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center">
         <p class="text-center" style="font-size:3rem;color:white"><span class="text-warning">To the airport</span> <br> with maximum comfort</p>
         <p class="text-light text-center" style="font-size:1.5rem;width:65%">We value the time and quality of travel for each of our clients</p>
-        <button style="background-color: #D7B65D;padding:1rem 3rem;border:0;font-size:.9rem">Read More</button>
+        {{-- <button style="background-color: #D7B65D;padding:1rem 3rem;border:0;font-size:.9rem">Read More</button> --}}
     </div>
 </div>
 @endsection
